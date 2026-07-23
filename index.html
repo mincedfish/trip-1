@@ -330,7 +330,21 @@
         display: block;
         font-size: 0.78rem;
         color: var(--ocean);
-        margin-bottom: 0.15rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .hike-pick span {
+        display: block;
+        font-size: 0.76rem;
+        color: var(--ink-soft);
+        margin-top: 0.2rem;
+    }
+
+    .hike-pick .stats {
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--ocean);
+        margin-top: 0.35rem;
     }
 
     .hike-pick .hard {
@@ -338,6 +352,8 @@
     }
 
     .hike-pick .hard strong { color: var(--coral-dark); }
+
+    .hike-pick .hard .stats { color: var(--coral-dark); }
 
     /* ── Map buttons ── */
     .map-label {
@@ -533,15 +549,19 @@
             </div>
             <p class="photo-caption">Purisima Creek Trail · Purisima Creek Redwoods Open Space Preserve.</p>
             <div class="stop-body">
-                <p>Lush coastal redwoods. Turn around whenever you feel like it — or when it gets super steep.</p>
+                <p>Lush coastal redwoods — pick your vibe:</p>
                 <div class="hike-pick">
                     <div class="hard">
-                        <strong>💪 Workout</strong>
-                        Whittemore Gulch — solid climb
+                        <strong>💪 Workout · Whittemore Gulch</strong>
+                        <span>Steep gulch between redwood canyon and open ridge with ocean views.</span>
+                        <span class="stats">~2.4 mi one-way · ~1,500 ft down from Skyline<br>Out-and-back ~4.8 mi · ~1,500 ft climb back</span>
+                        <span>Full loop w/ Purisima Creek: ~9 mi · ~1,600–2,100 ft</span>
                     </div>
                     <div>
-                        <strong>🌿 Chill</strong>
-                        Purisima Creek Trail — easy stream walk
+                        <strong>🌿 Chill · Purisima Creek Trail</strong>
+                        <span>Easy, shaded walk along the creek — go as far as you like.</span>
+                        <span class="stats">Mostly flat · out-and-back, your call on distance</span>
+                        <span>Turn around whenever, or when it starts getting steep toward Whittemore Gulch.</span>
                     </div>
                 </div>
                 <p class="map-label">Navigate</p>
