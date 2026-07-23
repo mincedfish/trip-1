@@ -1,182 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day Trip Itinerary</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coastal & Mountain Day Trip</title>
+<style>
+    :root {
+        --bg-color: #f8f6f0;
+        --card-bg: #ffffff;
+        --primary: #1e392a;
+        --accent: #d96b27;
+        --text: #2c3531;
+        --text-light: #5f6c65;
+        --border: #e5e0d8;
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: linear-gradient(160deg, #e8f4f8 0%, #f5f0eb 50%, #eef6ee 100%);
-            color: #2c3e50;
-            line-height: 1.6;
-            min-height: 100vh;
-            padding: 1.25rem;
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        .container {
-            max-width: 680px;
-            margin: 0 auto;
-        }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text);
+        line-height: 1.6;
+        padding: 24px 16px;
+    }
 
-        header {
-            text-align: center;
-            padding: 2rem 1rem 1.5rem;
-        }
+    .container {
+        max-width: 680px;
+        margin: 0 auto;
+    }
 
-        header h1 {
-            font-size: 1.85rem;
-            font-weight: 700;
-            color: #1a3a4a;
-            margin-bottom: 0.35rem;
-        }
+    header {
+        text-align: center;
+        padding: 32px 20px;
+        background: linear-gradient(135deg, #1e392a, #2a4d39);
+        color: white;
+        border-radius: 16px;
+        margin-bottom: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
 
-        header p {
-            color: #5a6f7a;
-            font-size: 1rem;
-        }
+    header h1 {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        letter-spacing: -0.5px;
+    }
 
-        .card {
-            background: #fff;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-            margin-bottom: 1.5rem;
-        }
+    header p {
+        font-size: 15px;
+        color: #d1e0d7;
+    }
 
-        .card-image-wrap {
-            position: relative;
-            height: 200px;
-            overflow: hidden;
-        }
+    .main-route-btn {
+        display: block;
+        text-align: center;
+        background-color: var(--accent);
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 15px;
+        padding: 14px 20px;
+        border-radius: 12px;
+        text-decoration: none;
+        margin-bottom: 24px;
+        box-shadow: 0 4px 12px rgba(217, 107, 39, 0.25);
+    }
 
-        .card-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
+    .meta-bar {
+        display: flex;
+        justify-content: space-around;
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 28px;
+        text-align: center;
+    }
 
-        .card-tag {
-            position: absolute;
-            bottom: 12px;
-            left: 12px;
-            background: rgba(255, 255, 255, 0.95);
-            color: #1a3a4a;
-            font-size: 0.78rem;
-            font-weight: 600;
-            padding: 0.35rem 0.75rem;
-            border-radius: 999px;
-            letter-spacing: 0.02em;
-        }
+    .meta-item label {
+        display: block;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--text-light);
+        font-weight: 600;
+        margin-bottom: 2px;
+    }
 
-        .card-content {
-            padding: 1.25rem 1.35rem 1.5rem;
-        }
+    .meta-item span {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--primary);
+    }
 
-        .card-title {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: #1a3a4a;
-            margin-bottom: 0.5rem;
-        }
+    .card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 24px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
 
-        .card-desc {
-            color: #4a5f6a;
-            margin-bottom: 1rem;
-            font-size: 0.98rem;
-        }
+    .card-image-wrap {
+        position: relative;
+        height: 200px;
+        width: 100%;
+        overflow: hidden;
+    }
 
-        .card-highlights {
-            list-style: none;
-            margin-bottom: 1.25rem;
-        }
+    .card-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-        .card-highlights li {
-            position: relative;
-            padding-left: 1.25rem;
-            margin-bottom: 0.45rem;
-            color: #3d5260;
-            font-size: 0.95rem;
-        }
+    .card-tag {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        background: rgba(30, 57, 42, 0.85);
+        backdrop-filter: blur(4px);
+        color: #fff;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
 
-        .card-highlights li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #2d8a6e;
-            font-weight: 600;
-        }
+    .card-content {
+        padding: 20px;
+    }
 
-        .btn {
-            display: inline-block;
-            background: #1a6b5c;
-            color: #fff;
-            text-decoration: none;
-            padding: 0.65rem 1.1rem;
-            border-radius: 10px;
-            font-size: 0.92rem;
-            font-weight: 600;
-            transition: background 0.2s;
-        }
+    .card-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 8px;
+    }
 
-        .btn:hover {
-            background: #145548;
-        }
+    .card-desc {
+        font-size: 14px;
+        color: var(--text-light);
+        margin-bottom: 16px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 1rem 1rem 2rem;
-            color: #5a6f7a;
-            font-size: 0.95rem;
-        }
+    .card-highlights {
+        list-style: none;
+        margin-bottom: 20px;
+    }
 
-        @media (max-width: 480px) {
-            body { padding: 0.75rem; }
-            header h1 { font-size: 1.55rem; }
-            .card-image-wrap { height: 170px; }
-        }
-    </style>
+    .card-highlights li {
+        font-size: 13.5px;
+        color: var(--text);
+        margin-bottom: 6px;
+        padding-left: 20px;
+        position: relative;
+    }
+
+    .card-highlights li::before {
+        content: "•";
+        color: var(--accent);
+        font-weight: bold;
+        font-size: 18px;
+        position: absolute;
+        left: 4px;
+        top: -2px;
+    }
+
+    .btn {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        background-color: #f0ebd9;
+        color: #2a4d39;
+        font-weight: 700;
+        font-size: 14px;
+        padding: 12px 18px;
+        border-radius: 10px;
+        text-decoration: none;
+    }
+
+    footer {
+        text-align: center;
+        padding: 24px;
+        font-size: 13px;
+        color: var(--text-light);
+    }
+</style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1>🌲 Coastal & Redwoods Day Trip</h1>
-        <p>Peninsula → Purisima Creek → Devil's Slide</p>
+        <h1>Coastal & Mountain Day Trip</h1>
+        <p>Woodside &bull; Pescadero &bull; Purisima Redwoods &bull; Devil's Slide</p>
     </header>
 
-    <!-- STOP 1 — edit this card with your first stop -->
-    <div class="card">
-        <div class="card-image-wrap">
-            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="Morning coffee" class="card-image">
-            <span class="card-tag">Stop 1 • Morning</span>
+    <a href="https://www.google.com/maps/dir/37.3774423,-121.8808901/Skywood+Trading+Post+%26+Deli,+17287+Skyline+Blvd,+Woodside,+CA+94062/Downtown+Local,+213+Stage+Rd,+Pescadero,+CA+94060/Arcangeli+Grocery+Co.,+287+Stage+Rd,+Pescadero,+CA+94060/Purisima+Creek+Redwoods+Open+Space+Preserve,+Half+Moon+Bay,+CA+94019/Devils+Slide,+California+94044/" target="_blank" class="main-route-btn">
+        🗺️ Open Full Route in Google Maps
+    </a>
+
+    <div class="meta-bar">
+        <div class="meta-item">
+            <label>Start</label>
+            <span>San Jose</span>
         </div>
-        <div class="card-content">
-            <h2 class="card-title">Your First Stop</h2>
-            <p class="card-desc">Add your breakfast or meet-up spot here.</p>
-            <ul class="card-highlights">
-                <li>Edit this section with your plans</li>
-            </ul>
-            <a href="https://maps.google.com" target="_blank" class="btn">📍 Open in Google Maps</a>
+        <div class="meta-item">
+            <label>Route</label>
+            <span>Scenic Loop</span>
+        </div>
+        <div class="meta-item">
+            <label>Vibe</label>
+            <span>Coast & Redwoods</span>
         </div>
     </div>
 
-    <!-- STOP 2 — edit this card with your second stop -->
+    <!-- STOP 1 -->
     <div class="card">
         <div class="card-image-wrap">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Coastal views" class="card-image">
-            <span class="card-tag">Stop 2 • Midday</span>
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Scenic Skyline Drive" class="card-image">
+            <span class="card-tag">Stop 1 • Waypoint</span>
         </div>
         <div class="card-content">
-            <h2 class="card-title">Your Second Stop</h2>
-            <p class="card-desc">Add your lunch or scenic stop here.</p>
+            <h2 class="card-title">Skywood Trading Post</h2>
+            <p class="card-desc"><strong>Note:</strong> Skippable! Added so GPS takes the scenic mountain route over Skyline Blvd.</p>
+            <a href="https://maps.google.com/?q=Skywood+Trading+Post+%26+Deli" target="_blank" class="btn">📍 Open Location in Google Maps</a>
+        </div>
+    </div>
+
+    <!-- STOP 2 -->
+    <div class="card">
+        <div class="card-image-wrap">
+            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80" alt="Pescadero Coffee" class="card-image">
+            <span class="card-tag">Stop 2 • Coffee & Picnic Prep</span>
+        </div>
+        <div class="card-content">
+            <h2 class="card-title">Pescadero (Downtown Local & Arcangeli)</h2>
+            <p class="card-desc">Coffee at Downtown Local + pick up warm artichoke garlic herb bread and custom deli sandwiches at Arcangeli's for a picnic.</p>
             <ul class="card-highlights">
-                <li>Edit this section with your plans</li>
+                <li>Downtown Local: Espresso & vintage memorabilia</li>
+                <li>Arcangeli Grocery: Legendary warm artichoke bread & sandwiches</li>
             </ul>
-            <a href="https://maps.google.com" target="_blank" class="btn">📍 Open in Google Maps</a>
+            <a href="https://maps.google.com/?q=Downtown+Local+Pescadero" target="_blank" class="btn">📍 Open Pescadero in Google Maps</a>
         </div>
     </div>
 
