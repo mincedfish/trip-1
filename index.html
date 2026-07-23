@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Trip Itinerary</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(160deg, #e8f4f8 0%, #f5f0eb 50%, #eef6ee 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 1.25rem;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem 1.5rem;
+        }
+
+        header h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: #1a3a4a;
+            margin-bottom: 0.35rem;
+        }
+
+        header p {
+            color: #5a6f7a;
+            font-size: 1rem;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-image-wrap {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-tag {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #1a3a4a;
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            letter-spacing: 0.02em;
+        }
+
+        .card-content {
+            padding: 1.25rem 1.35rem 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #1a3a4a;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-desc {
+            color: #4a5f6a;
+            margin-bottom: 1rem;
+            font-size: 0.98rem;
+        }
+
+        .card-highlights {
+            list-style: none;
+            margin-bottom: 1.25rem;
+        }
+
+        .card-highlights li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.45rem;
+            color: #3d5260;
+            font-size: 0.95rem;
+        }
+
+        .card-highlights li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #2d8a6e;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #1a6b5c;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.65rem 1.1rem;
+            border-radius: 10px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: #145548;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 1rem 2rem;
+            color: #5a6f7a;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 0.75rem; }
+            header h1 { font-size: 1.55rem; }
+            .card-image-wrap { height: 170px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🌲 Coastal & Redwoods Day Trip</h1>
+        <p>Peninsula → Purisima Creek → Devil's Slide</p>
+    </header>
+
+    <!-- STOP 1 — edit this card with your first stop -->
+    <div class="card">
+        <div class="card-image-wrap">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="Morning coffee" class="card-image">
+            <span class="card-tag">Stop 1 • Morning</span>
+        </div>
+        <div class="card-content">
+            <h2 class="card-title">Your First Stop</h2>
+            <p class="card-desc">Add your breakfast or meet-up spot here.</p>
+            <ul class="card-highlights">
+                <li>Edit this section with your plans</li>
+            </ul>
+            <a href="https://maps.google.com" target="_blank" class="btn">📍 Open in Google Maps</a>
+        </div>
+    </div>
+
+    <!-- STOP 2 — edit this card with your second stop -->
+    <div class="card">
+        <div class="card-image-wrap">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Coastal views" class="card-image">
+            <span class="card-tag">Stop 2 • Midday</span>
+        </div>
+        <div class="card-content">
+            <h2 class="card-title">Your Second Stop</h2>
+            <p class="card-desc">Add your lunch or scenic stop here.</p>
+            <ul class="card-highlights">
+                <li>Edit this section with your plans</li>
+            </ul>
+            <a href="https://maps.google.com" target="_blank" class="btn">📍 Open in Google Maps</a>
+        </div>
+    </div>
+
+    <!-- STOP 3 -->
+    <div class="card">
+        <div class="card-image-wrap">
+            <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80" alt="Purisima Redwoods" class="card-image">
+            <span class="card-tag">Stop 3 • Redwood Hike</span>
+        </div>
+        <div class="card-content">
+            <h2 class="card-title">Purisima Creek Redwoods</h2>
+            <p class="card-desc">Lush coastal redwood preserve. Turn around whenever you feel like it or when it gets super steep.</p>
+            <ul class="card-highlights">
+                <li><strong>Whittemore Gulch:</strong> Hike if you want a solid workout/climb</li>
+                <li><strong>Purisima Creek Trail:</strong> Hike for something chill along the stream</li>
+            </ul>
+            <a href="https://maps.google.com/?q=Purisima+Creek+Redwoods+Open+Space+Preserve" target="_blank" class="btn">📍 Open Preserve in Google Maps</a>
+        </div>
+    </div>
+
+    <!-- STOP 4 -->
+    <div class="card">
+        <div class="card-image-wrap">
+            <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=800&q=80" alt="Devil's Slide Views" class="card-image">
+            <span class="card-tag">Stop 4 • Ocean Views</span>
+        </div>
+        <div class="card-content">
+            <h2 class="card-title">Devil's Slide</h2>
+            <p class="card-desc">Finish the trip along Highway 1 with panoramic ocean cliff views and the WWII observation bunker lookout.</p>
+            <ul class="card-highlights">
+                <li>Panoramic 360-degree ocean views</li>
+                <li>Walk to the WWII military observation post</li>
+            </ul>
+            <a href="https://maps.google.com/?q=Devils+Slide+California" target="_blank" class="btn">📍 Open Devil's Slide in Google Maps</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>💡 Tip: Dress in layers for mountain and coastal weather changes!</p>
+    </footer>
+</div>
+
+</body>
+</html>
