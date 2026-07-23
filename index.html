@@ -4,287 +4,599 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Coastal & Mountain Day Trip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
     :root {
-        --bg-color: #f8f6f0;
-        --card-bg: #ffffff;
-        --primary: #1e392a;
-        --accent: #d96b27;
-        --text: #2c3531;
-        --text-light: #5f6c65;
-        --border: #e5e0d8;
+        --ink: #152228;
+        --ink-soft: #3d4f57;
+        --muted: #6b7c84;
+        --sand: #faf6ef;
+        --white: #ffffff;
+        --ocean: #1a4d5c;
+        --ocean-light: #e8f2f5;
+        --coral: #d94841;
+        --coral-dark: #b83832;
+        --pine: #2a5c45;
+        --optional: #8a9499;
+        --line: #e4ddd2;
+        --radius: 14px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html { scroll-behavior: smooth; }
+
     body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        background-color: var(--bg-color);
-        color: var(--text);
-        line-height: 1.6;
-        padding: 24px 16px;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        background: var(--sand);
+        color: var(--ink);
+        line-height: 1.55;
+        padding-bottom: 5.75rem;
     }
 
-    .container {
-        max-width: 680px;
+    .wrap {
+        max-width: 640px;
         margin: 0 auto;
+        padding: 1.25rem 1rem 2rem;
     }
 
-    header {
-        text-align: center;
-        padding: 32px 20px;
-        background: linear-gradient(135deg, #1e392a, #2a4d39);
-        color: white;
-        border-radius: 16px;
-        margin-bottom: 20px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    /* ── Header ── */
+    .masthead {
+        margin-bottom: 1.5rem;
     }
 
-    header h1 {
-        font-size: 26px;
+    .eyebrow {
+        font-size: 0.72rem;
         font-weight: 700;
-        margin-bottom: 8px;
-        letter-spacing: -0.5px;
-    }
-
-    header p {
-        font-size: 15px;
-        color: #d1e0d7;
-    }
-
-    .main-route-btn {
-        display: block;
-        text-align: center;
-        background-color: var(--accent);
-        color: #ffffff;
-        font-weight: 700;
-        font-size: 15px;
-        padding: 14px 20px;
-        border-radius: 12px;
-        text-decoration: none;
-        margin-bottom: 24px;
-        box-shadow: 0 4px 12px rgba(217, 107, 39, 0.25);
-    }
-
-    .meta-bar {
-        display: flex;
-        justify-content: space-around;
-        background: var(--card-bg);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 16px;
-        margin-bottom: 28px;
-        text-align: center;
-    }
-
-    .meta-item label {
-        display: block;
-        font-size: 11px;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
-        letter-spacing: 1px;
-        color: var(--text-light);
-        font-weight: 600;
-        margin-bottom: 2px;
+        color: var(--ocean);
+        margin-bottom: 0.4rem;
     }
 
-    .meta-item span {
-        font-size: 14px;
+    .masthead h1 {
+        font-family: "Fraunces", Georgia, serif;
+        font-size: clamp(1.75rem, 6vw, 2.25rem);
         font-weight: 700;
-        color: var(--primary);
+        line-height: 1.12;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        margin-bottom: 0.65rem;
     }
 
-    .card {
-        background: var(--card-bg);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        overflow: hidden;
-        margin-bottom: 24px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    .route-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
     }
 
-    .card-image-wrap {
-        position: relative;
-        height: 200px;
+    .route-tags span {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--ink-soft);
+        background: var(--white);
+        border: 1px solid var(--line);
+        padding: 0.3rem 0.65rem;
+        border-radius: 999px;
+    }
+
+    /* ── Primary CTA ── */
+    .maps-primary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
         width: 100%;
+        background: var(--coral);
+        color: #fff;
+        text-decoration: none;
+        padding: 1rem 1.15rem;
+        border-radius: var(--radius);
+        margin: 1.25rem 0 1.5rem;
+        box-shadow: 0 6px 24px rgba(217, 72, 65, 0.35);
+        transition: background 0.15s, transform 0.15s;
+    }
+
+    .maps-primary:hover { background: var(--coral-dark); transform: translateY(-1px); }
+    .maps-primary:active { transform: translateY(0); }
+
+    .maps-primary strong {
+        display: block;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .maps-primary small {
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 500;
+        opacity: 0.9;
+        margin-top: 0.1rem;
+    }
+
+    .maps-primary .go {
+        flex-shrink: 0;
+        width: 2.75rem;
+        height: 2.75rem;
+        background: rgba(255,255,255,0.2);
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+
+    /* ── Jump links ── */
+    .quick-jump {
+        display: flex;
+        gap: 0.4rem;
+        overflow-x: auto;
+        padding-bottom: 0.15rem;
+        margin-bottom: 1.75rem;
+        scrollbar-width: none;
+    }
+
+    .quick-jump::-webkit-scrollbar { display: none; }
+
+    .quick-jump a {
+        flex-shrink: 0;
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--ocean);
+        background: var(--white);
+        border: 1px solid var(--line);
+        padding: 0.45rem 0.8rem;
+        border-radius: 999px;
+        text-decoration: none;
+    }
+
+    .quick-jump a.muted {
+        color: var(--optional);
+        border-style: dashed;
+    }
+
+    /* ── Stops ── */
+    .stops { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .stop {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: calc(var(--radius) + 2px);
         overflow: hidden;
     }
 
-    .card-image {
+    .stop.optional {
+        border-style: dashed;
+        background: #fcfbfa;
+    }
+
+    .stop-head {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        padding: 1rem 1rem 0;
+    }
+
+    .stop-num {
+        font-family: "Fraunces", Georgia, serif;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1;
+        color: var(--ocean);
+        min-width: 2.25rem;
+    }
+
+    .stop.optional .stop-num { color: var(--optional); }
+
+    .stop-meta h2 {
+        font-family: "Fraunces", Georgia, serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        margin-bottom: 0.15rem;
+    }
+
+    .stop-meta p {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .optional-badge {
+        margin-left: auto;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--optional);
+        border: 1px dashed var(--optional);
+        padding: 0.25rem 0.5rem;
+        border-radius: 6px;
+    }
+
+    /* ── Images ── */
+    .photo {
+        position: relative;
+        margin: 0.85rem 1rem 0;
+        border-radius: var(--radius);
+        overflow: hidden;
+        height: 180px;
+        background: linear-gradient(135deg, #c8d8dc 0%, #8aa4ad 100%);
+    }
+
+    .photo img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        display: block;
     }
 
-    .card-tag {
+    .photo.fallback::after {
+        content: attr(data-label);
         position: absolute;
-        top: 14px;
-        left: 14px;
-        background: rgba(30, 57, 42, 0.85);
-        backdrop-filter: blur(4px);
-        color: #fff;
-        font-size: 12px;
-        font-weight: 700;
-        padding: 4px 10px;
-        border-radius: 20px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: rgba(255,255,255,0.85);
+        text-align: center;
+        padding: 1rem;
     }
 
-    .card-content {
-        padding: 20px;
+    .photo-caption {
+        margin: 0.45rem 1rem 0;
+        font-size: 0.72rem;
+        color: var(--muted);
+        line-height: 1.35;
     }
 
-    .card-title {
-        font-size: 20px;
-        font-weight: 700;
-        color: var(--primary);
-        margin-bottom: 8px;
+    .photo-caption a {
+        color: var(--ocean);
     }
 
-    .card-desc {
-        font-size: 14px;
-        color: var(--text-light);
-        margin-bottom: 16px;
+    .credits {
+        margin-top: 1.25rem;
+        font-size: 0.68rem;
+        color: var(--muted);
+        line-height: 1.45;
     }
 
-    .card-highlights {
+    .credits a { color: var(--ocean); }
+
+    .stop.optional .photo {
+        background: linear-gradient(135deg, #d4d8da 0%, #9aa3a8 100%);
+    }
+
+    .stop-body {
+        padding: 1rem 1rem 1.15rem;
+    }
+
+    .stop-body > p {
+        font-size: 0.92rem;
+        color: var(--ink-soft);
+        margin-bottom: 0.85rem;
+    }
+
+    .note-box {
+        background: #fff8f0;
+        border-left: 3px solid #e8a54b;
+        padding: 0.65rem 0.8rem;
+        border-radius: 0 8px 8px 0;
+        font-size: 0.86rem;
+        color: #7a4e12;
+        margin-bottom: 0.85rem;
+    }
+
+    .note-box strong { color: #5c3a0a; }
+
+    .details {
         list-style: none;
-        margin-bottom: 20px;
+        margin-bottom: 1rem;
     }
 
-    .card-highlights li {
-        font-size: 13.5px;
-        color: var(--text);
-        margin-bottom: 6px;
-        padding-left: 20px;
-        position: relative;
+    .details li {
+        font-size: 0.88rem;
+        color: var(--ink-soft);
+        padding: 0.35rem 0;
+        border-bottom: 1px solid #f0ebe3;
     }
 
-    .card-highlights li::before {
-        content: "•";
-        color: var(--accent);
-        font-weight: bold;
-        font-size: 18px;
-        position: absolute;
-        left: 4px;
-        top: -2px;
+    .details li:last-child { border-bottom: none; }
+
+    .details strong { color: var(--ink); }
+
+    .hike-pick {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
     }
 
-    .btn {
-        display: inline-block;
-        width: 100%;
-        text-align: center;
-        background-color: #f0ebd9;
-        color: #2a4d39;
-        font-weight: 700;
-        font-size: 14px;
-        padding: 12px 18px;
+    .hike-pick div {
+        background: var(--ocean-light);
         border-radius: 10px;
-        text-decoration: none;
+        padding: 0.65rem 0.7rem;
+        font-size: 0.8rem;
+        color: var(--ink-soft);
+        line-height: 1.35;
     }
 
-    footer {
-        text-align: center;
-        padding: 24px;
-        font-size: 13px;
-        color: var(--text-light);
+    .hike-pick strong {
+        display: block;
+        font-size: 0.78rem;
+        color: var(--ocean);
+        margin-bottom: 0.15rem;
+    }
+
+    .hike-pick .hard {
+        background: #fdf0ee;
+    }
+
+    .hike-pick .hard strong { color: var(--coral-dark); }
+
+    /* ── Map buttons ── */
+    .map-label {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 0.4rem;
+    }
+
+    .map-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .map-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+        width: 100%;
+        background: var(--ocean);
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.9rem;
+        padding: 0.85rem 1rem;
+        border-radius: 11px;
+        text-decoration: none;
+        box-shadow: 0 4px 14px rgba(26, 77, 92, 0.25);
+        transition: background 0.15s, transform 0.15s;
+    }
+
+    .map-btn:hover { background: #143d4a; transform: translateY(-1px); }
+    .map-btn:active { transform: translateY(0); }
+
+    .map-btn.alt {
+        background: var(--pine);
+        box-shadow: 0 4px 14px rgba(42, 92, 69, 0.22);
+    }
+
+    .map-btn.alt:hover { background: #1e4534; }
+
+    .map-btn .arrow {
+        font-size: 1.15rem;
+        opacity: 0.85;
+    }
+
+    /* ── Footer tip ── */
+    .tip {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        font-size: 0.88rem;
+        color: var(--muted);
+    }
+
+    .tip strong { color: var(--ink); }
+
+    /* ── Sticky bar ── */
+    .sticky {
+        position: fixed;
+        left: 0; right: 0; bottom: 0;
+        z-index: 50;
+        padding: 0.6rem 1rem calc(0.6rem + env(safe-area-inset-bottom));
+        background: rgba(250, 246, 239, 0.94);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid var(--line);
+    }
+
+    .sticky .maps-primary {
+        margin: 0;
+        padding: 0.85rem 1rem;
+    }
+
+    .sticky .maps-primary strong { font-size: 0.92rem; }
+
+    @media (min-width: 600px) {
+        .wrap { padding: 2rem 1.5rem 2.5rem; }
+        .photo { height: 210px; }
+        .sticky { display: none; }
+        body { padding-bottom: 0; }
+    }
+
+    @media (max-width: 380px) {
+        .hike-pick { grid-template-columns: 1fr; }
     }
 </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>Coastal & Mountain Day Trip</h1>
-        <p>Woodside &bull; Pescadero &bull; Purisima Redwoods &bull; Devil's Slide</p>
+<div class="wrap">
+
+    <header class="masthead">
+        <p class="eyebrow">Day trip · South Bay</p>
+        <h1>Coastal &amp; Mountain Loop</h1>
+        <div class="route-tags">
+            <span>San Jose start</span>
+            <span>Skyline → coast</span>
+            <span>4 stops</span>
+        </div>
     </header>
 
-    <a href="https://www.google.com/maps/dir/37.3774423,-121.8808901/Skywood+Trading+Post+%26+Deli,+17287+Skyline+Blvd,+Woodside,+CA+94062/Downtown+Local,+213+Stage+Rd,+Pescadero,+CA+94060/Arcangeli+Grocery+Co.,+287+Stage+Rd,+Pescadero,+CA+94060/Purisima+Creek+Redwoods+Open+Space+Preserve,+Half+Moon+Bay,+CA+94019/Devils+Slide,+California+94044/" target="_blank" class="main-route-btn">
-        🗺️ Open Full Route in Google Maps
+    <a class="maps-primary" href="https://www.google.com/maps/dir/37.3774423,-121.8808901/Skywood+Trading+Post+%26+Deli,+17287+Skyline+Blvd,+Woodside,+CA+94062/Downtown+Local,+213+Stage+Rd,+Pescadero,+CA+94060/Arcangeli+Grocery+Co.,+287+Stage+Rd,+Pescadero,+CA+94060/Purisima+Creek+Redwoods+Open+Space+Preserve,+Half+Moon+Bay,+CA+94019/Devils+Slide,+California+94044/" target="_blank" rel="noopener">
+        <span>
+            <strong>🗺️ Open full route in Google Maps</strong>
+            <small>All 5 waypoints · tap for turn-by-turn</small>
+        </span>
+        <span class="go">→</span>
     </a>
 
-    <div class="meta-bar">
-        <div class="meta-item">
-            <label>Start</label>
-            <span>San Jose</span>
-        </div>
-        <div class="meta-item">
-            <label>Route</label>
-            <span>Scenic Loop</span>
-        </div>
-        <div class="meta-item">
-            <label>Vibe</label>
-            <span>Coast & Redwoods</span>
-        </div>
+    <nav class="quick-jump" aria-label="Jump to stop">
+        <a href="#s1" class="muted">1 Skywood</a>
+        <a href="#s2">2 Pescadero</a>
+        <a href="#s3">3 Redwoods</a>
+        <a href="#s4">4 Devil's Slide</a>
+    </nav>
+
+    <div class="stops">
+
+        <!-- Stop 1 -->
+        <article class="stop optional" id="s1">
+            <div class="stop-head">
+                <span class="stop-num">1</span>
+                <div class="stop-meta">
+                    <h2>Skywood Trading Post</h2>
+                    <p>Waypoint · Woodside</p>
+                </div>
+                <span class="optional-badge">Skippable</span>
+            </div>
+            <div class="photo" data-label="Skyline Blvd · Woodside">
+                <img src="images/stop1-skyline.jpg" alt="Skyline Boulevard in the Santa Cruz Mountains near Woodside" loading="lazy">
+            </div>
+            <p class="photo-caption">Skyline Blvd (CA-35) · Skywood Trading Post sits at the CA-84 junction on this road.</p>
+            <div class="stop-body">
+                <div class="note-box">
+                    <strong>Skippable.</strong> Only in the route so GPS sends you over the scenic Skyline Blvd mountain road.
+                </div>
+                <p class="map-label">Navigate</p>
+                <div class="map-btns">
+                    <a class="map-btn" href="https://maps.google.com/?q=Skywood+Trading+Post+%26+Deli,+17287+Skyline+Blvd,+Woodside,+CA+94062" target="_blank" rel="noopener">
+                        <span>Skywood Trading Post</span><span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Stop 2 -->
+        <article class="stop" id="s2">
+            <div class="stop-head">
+                <span class="stop-num">2</span>
+                <div class="stop-meta">
+                    <h2>Pescadero</h2>
+                    <p>Coffee &amp; picnic prep</p>
+                </div>
+            </div>
+            <div class="photo" data-label="Arcangeli Grocery · Pescadero">
+                <img src="images/stop2-arcangeli.jpg" alt="Arcangeli Grocery Co. storefront on Stage Road in Pescadero" loading="lazy">
+            </div>
+            <p class="photo-caption">Arcangeli Grocery Co. · 287 Stage Rd, Pescadero (artichoke bread &amp; deli).</p>
+            <div class="stop-body">
+                <p>Coffee at Downtown Local, then warm artichoke garlic herb bread and deli sandwiches at Arcangeli's for the road.</p>
+                <ul class="details">
+                    <li><strong>Downtown Local</strong> — espresso &amp; vintage vibes</li>
+                    <li><strong>Arcangeli Grocery</strong> — legendary artichoke bread &amp; sandwiches</li>
+                </ul>
+                <p class="map-label">Navigate</p>
+                <div class="map-btns">
+                    <a class="map-btn" href="https://maps.google.com/?q=Downtown+Local,+213+Stage+Rd,+Pescadero,+CA+94060" target="_blank" rel="noopener">
+                        <span>☕ Downtown Local</span><span class="arrow">→</span>
+                    </a>
+                    <a class="map-btn alt" href="https://maps.google.com/?q=Arcangeli+Grocery+Co.,+287+Stage+Rd,+Pescadero,+CA+94060" target="_blank" rel="noopener">
+                        <span>🥪 Arcangeli Grocery</span><span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Stop 3 -->
+        <article class="stop" id="s3">
+            <div class="stop-head">
+                <span class="stop-num">3</span>
+                <div class="stop-meta">
+                    <h2>Purisima Creek Redwoods</h2>
+                    <p>Redwood hike</p>
+                </div>
+            </div>
+            <div class="photo" data-label="Purisima Creek Redwoods">
+                <img src="images/stop3-purisima.jpg" alt="Redwood trail at Purisima Creek Redwoods Open Space Preserve" loading="lazy">
+            </div>
+            <p class="photo-caption">Purisima Creek Trail · Purisima Creek Redwoods Open Space Preserve.</p>
+            <div class="stop-body">
+                <p>Lush coastal redwoods. Turn around whenever you feel like it — or when it gets super steep.</p>
+                <div class="hike-pick">
+                    <div class="hard">
+                        <strong>💪 Workout</strong>
+                        Whittemore Gulch — solid climb
+                    </div>
+                    <div>
+                        <strong>🌿 Chill</strong>
+                        Purisima Creek Trail — easy stream walk
+                    </div>
+                </div>
+                <p class="map-label">Navigate</p>
+                <div class="map-btns">
+                    <a class="map-btn" href="https://maps.google.com/?q=Purisima+Creek+Redwoods+Open+Space+Preserve" target="_blank" rel="noopener">
+                        <span>Purisima Creek Redwoods</span><span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Stop 4 -->
+        <article class="stop" id="s4">
+            <div class="stop-head">
+                <span class="stop-num">4</span>
+                <div class="stop-meta">
+                    <h2>Devil's Slide</h2>
+                    <p>Ocean views · finale</p>
+                </div>
+            </div>
+            <div class="photo" data-label="Devil's Slide bunker">
+                <img src="images/stop4-bunker.jpg" alt="WWII observation bunker at Devil's Slide above the Pacific" loading="lazy">
+            </div>
+            <p class="photo-caption">Devil's Slide WWII observation bunker · Pacifica / Montara coast.</p>
+            <div class="stop-body">
+                <p>Finish along Highway 1 with cliffside ocean views and the WWII observation bunker.</p>
+                <ul class="details">
+                    <li>Panoramic 360° ocean views</li>
+                    <li>Short steep walk up to the military observation post</li>
+                </ul>
+                <p class="map-label">Navigate</p>
+                <div class="map-btns">
+                    <a class="map-btn" href="https://maps.google.com/?q=Devils+Slide+Trail+South+Parking+Lot" target="_blank" rel="noopener">
+                        <span>Devil's Slide · bunker parking</span><span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </article>
+
     </div>
 
-    <!-- STOP 1 -->
-    <div class="card">
-        <div class="card-image-wrap">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Scenic Skyline Drive" class="card-image">
-            <span class="card-tag">Stop 1 • Waypoint</span>
-        </div>
-        <div class="card-content">
-            <h2 class="card-title">Skywood Trading Post</h2>
-            <p class="card-desc"><strong>Note:</strong> Skippable! Added so GPS takes the scenic mountain route over Skyline Blvd.</p>
-            <a href="https://maps.google.com/?q=Skywood+Trading+Post+%26+Deli" target="_blank" class="btn">📍 Open Location in Google Maps</a>
-        </div>
-    </div>
+    <p class="tip"><strong>Pack layers.</strong> Mountain and coastal weather can shift fast — especially at Skyline and the cliffs.</p>
 
-    <!-- STOP 2 -->
-    <div class="card">
-        <div class="card-image-wrap">
-            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80" alt="Pescadero Coffee" class="card-image">
-            <span class="card-tag">Stop 2 • Coffee & Picnic Prep</span>
-        </div>
-        <div class="card-content">
-            <h2 class="card-title">Pescadero (Downtown Local & Arcangeli)</h2>
-            <p class="card-desc">Coffee at Downtown Local + pick up warm artichoke garlic herb bread and custom deli sandwiches at Arcangeli's for a picnic.</p>
-            <ul class="card-highlights">
-                <li>Downtown Local: Espresso & vintage memorabilia</li>
-                <li>Arcangeli Grocery: Legendary warm artichoke bread & sandwiches</li>
-            </ul>
-            <a href="https://maps.google.com/?q=Downtown+Local+Pescadero" target="_blank" class="btn">📍 Open Pescadero in Google Maps</a>
-        </div>
-    </div>
+    <p class="credits">Photos via <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a> (CC licenses). Stop 1 shows Skyline Blvd at Woodside — no free photo of Skywood itself was available.</p>
 
-    <!-- STOP 3 -->
-    <div class="card">
-        <div class="card-image-wrap">
-            <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80" alt="Purisima Redwoods" class="card-image">
-            <span class="card-tag">Stop 3 • Redwood Hike</span>
-        </div>
-        <div class="card-content">
-            <h2 class="card-title">Purisima Creek Redwoods</h2>
-            <p class="card-desc">Lush coastal redwood preserve. Turn around whenever you feel like it or when it gets super steep.</p>
-            <ul class="card-highlights">
-                <li><strong>Whittemore Gulch:</strong> Hike if you want a solid workout/climb</li>
-                <li><strong>Purisima Creek Trail:</strong> Hike for something chill along the stream</li>
-            </ul>
-            <a href="https://maps.google.com/?q=Purisima+Creek+Redwoods+Open+Space+Preserve" target="_blank" class="btn">📍 Open Preserve in Google Maps</a>
-        </div>
-    </div>
+</div>
 
-    <!-- STOP 4 -->
-    <div class="card">
-        <div class="card-image-wrap">
-            <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=800&q=80" alt="Devil's Slide Views" class="card-image">
-            <span class="card-tag">Stop 4 • Ocean Views</span>
-        </div>
-        <div class="card-content">
-            <h2 class="card-title">Devil's Slide</h2>
-            <p class="card-desc">Finish the trip along Highway 1 with panoramic ocean cliff views and the WWII observation bunker lookout.</p>
-            <ul class="card-highlights">
-                <li>Panoramic 360-degree ocean views</li>
-                <li>Walk to the WWII military observation post</li>
-            </ul>
-            <a href="https://maps.google.com/?q=Devils+Slide+California" target="_blank" class="btn">📍 Open Devil's Slide in Google Maps</a>
-        </div>
-    </div>
-
-    <footer>
-        <p>💡 Tip: Dress in layers for mountain and coastal weather changes!</p>
-    </footer>
+<div class="sticky">
+    <a class="maps-primary" href="https://www.google.com/maps/dir/37.3774423,-121.8808901/Skywood+Trading+Post+%26+Deli,+17287+Skyline+Blvd,+Woodside,+CA+94062/Downtown+Local,+213+Stage+Rd,+Pescadero,+CA+94060/Arcangeli+Grocery+Co.,+287+Stage+Rd,+Pescadero,+CA+94060/Purisima+Creek+Redwoods+Open+Space+Preserve,+Half+Moon+Bay,+CA+94019/Devils+Slide,+California+94044/" target="_blank" rel="noopener">
+        <span>
+            <strong>🗺️ Open full route</strong>
+            <small>Tap for Google Maps navigation</small>
+        </span>
+        <span class="go">→</span>
+    </a>
 </div>
 
 </body>
